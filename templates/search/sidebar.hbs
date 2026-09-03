@@ -1,0 +1,22 @@
+<div class="tri">
+    
+</div>
+<div class="search">
+    <input type="text" id="map_search_by_name" name="search" value="{{searchTerm}}"/>
+</div>
+<div class="tags">
+    <select name="tag">
+        <option class="" >{{ localize "import-studio-du-destin.search.tag" }}</options>
+        {{#each tags as |tag| }}
+            <option class="tag{{#if tag.selected}} selected{{/if}}" data-action="clickTag" data-id="{{ tag.id }}">{{ tag.libelle }}</options>
+        {{/each}}
+    </select>
+
+    <div class="selected">
+    {{#each selectedTags as |tag| }}
+        <span>{{tag.libelle}}<span data-action="supprTag" data-tagid="{{ tag.id }}">X</span></span>
+    {{/each}}
+    </div>
+</div>
+        
+    

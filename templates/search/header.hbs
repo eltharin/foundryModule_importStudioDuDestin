@@ -1,0 +1,26 @@
+<span class="logo">
+    <img src="modules/import-studio-du-destin/assets/Logos-Studio-DeStin.png" />
+</span>
+
+<span class="spacer1">
+</span>
+
+<span class="login">
+    {{#if me.loginData.patreon.isLogged }}
+        <span class="pseudo">{{ me.loginData.patreon.loggedData.login }}</span>
+        <span class="grade">{{ me.loginData.patreon.loggedData.niveaux.[0].libelle }}</span>
+        <span class="image"><img src="{{ me.loginData.patreon.loggedData.niveaux.[0].image }}" /></span>
+        <span class="deconnexion" data-action="deconnexion">X</span>
+    {{else}}
+        <span class="button boutontestopen" data-url="{{me.loginData.patreon.loggedData.loginlink}},{{myurl}}">{{ localize "import-studio-du-destin.login.patreon" }}</span>
+    {{/if}}
+
+        
+</span>
+
+<span class="lang">
+    <div  class="side_{{lang}}" data-action="clickChangeLang">
+        <img src="modules/import-studio-du-destin/assets/lang/flag-{{lang}}.png" />
+        <span>{{lang}}</span>
+    </div>
+</span>

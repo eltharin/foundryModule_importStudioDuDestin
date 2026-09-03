@@ -1,0 +1,20 @@
+<div class="liste">
+    {{#each packs as |pack| }}
+
+        <div class="card" data-action="clickPack" data-id="{{ @key }}">
+            <div class="imgContainer">
+                <img src="{{ pack.images.[0] }}">
+            </div>
+            <div class="textContainer">
+                <span>{{ pack.libelle }}</span>
+            </div>
+            {{#if (eq pack.haveRight false) }}
+                <span class="cadenas">
+                    <svg width="20" height="20" viewBox="0 0 877 1280">
+                        <use href="modules/import-studio-du-destin/assets/lock.svg#icon">
+                    </svg>
+                </span>
+            {{/if}}        
+        </div>
+    {{/each}}
+</div>

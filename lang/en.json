@@ -1,0 +1,32 @@
+{
+    "import-studio-du-destin" : {
+         "importBtn": "Import a map",
+         "changeVariante": "Change variant",
+         "choixLang": "Change Lang",
+         "login": {
+            "patreon": "Log in to Patreon to download the maps"
+         },
+         "search": {
+            "tag": "Choose a tag"
+         },
+         "lienPatreon": "Patreon Link",
+         "maps": "Maps",
+         "downloadMap": {
+            "button": "Download",
+            "title": "Which variant to download?"
+         },
+         "errorApi": {
+            "NotRightToDownload" : "You do not have permission to download the map {varianteName}",
+            "varianteNotFound": "The variant {varianteId} was not found",
+            "cantConnectToServer": "Unable to connect to the server",
+            "cantrecuptags": "Unable to retrieve tags",
+            "cantrecupniveaux": "Unable to retrieve levels",
+            "cantrecupmaps": "Unable to retrieve maps",
+            "cantrecupmapdata": "Unable to retrieve map data",
+            "cantrecupimage": "Unable to retrieve image"
+         },
+         "createSceneFromMap": "Creating scene {mapName}",
+         "notConnected": "You are not connected. Please log in to download the maps.",
+         "noNiveaux": "Please subscribe to our Patreon to unlock access to the maps."
+   }
+}

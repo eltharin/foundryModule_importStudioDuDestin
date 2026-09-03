@@ -1,0 +1,35 @@
+{
+  "id": "import-studio-du-destin",
+  "title": "Import Studio Du Destin",
+  "description": "Module FoundryVTT permettant l'import de map créées par le Studio du Dé'stin.",
+  "version": "#{VERSION}#",
+  "compatibility": {
+    "minimum": 13,
+    "verified": 13
+  },
+  "authors": [{
+    "name": "eltharin",
+    "url": "https://www.eltharin.fr",
+    "email": "eltharin@eltharin.fr",
+    "discord": "eltharin"
+  }],
+  "esmodules": ["src/main.mjs"],
+  "styles": ["styles/styles.css"],
+  "packs": [],
+  "languages": [{
+    "lang": "fr",
+    "name": "Français",
+    "path": "lang/fr.json"
+  },{
+    "lang": "en",
+    "name": "Français",
+    "path": "lang/fr.json"
+  }],
+  "socket": false,
+  "url": "#{URL}#",
+  "bugs": "#{URL}#/issues",
+  "readme": "#{URL}#/blob/main/README.md",
+  "license": "https://mit-license.org/",
+  "manifest": "#{MANIFEST}#",
+  "download": "#{DOWNLOAD}#"
+}

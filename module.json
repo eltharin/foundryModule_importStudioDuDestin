@@ -1,0 +1,30 @@
+{
+  "id": "import-studio-du-destin",
+  "title": "Import Studio Du Dé'stin",
+  "version": "#{VERSION}#",
+  "authors": [{"name": "Studio du dé'stin"}],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "esmodules": ["src/main.mjs"],
+  "styles": ["styles/styles.css"],
+  "languages": [{
+    "lang": "en",
+    "name": "English",
+    "path": "lang/fr.json"
+  },{
+    "lang": "fr",
+    "name": "Français",
+    "path": "lang/fr.json"
+  }],
+  "flags": {
+    "canUpload": true
+  },
+  "description": "Import module for Studio du dé'stin maps",
+  "bugs": "#{URL}#/issues",
+  "readme": "#{URL}#/blob/main/README.md",
+  "license": "https://mit-license.org/",
+  "manifest": "#{MANIFEST}#",
+  "download": "#{DOWNLOAD}#"
+}

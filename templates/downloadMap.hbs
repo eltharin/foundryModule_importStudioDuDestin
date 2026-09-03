@@ -1,0 +1,27 @@
+<div>
+    {{ localize "import-studio-du-destin.downloadMap.title" }} 
+    <input type="hidden" name="map" value="{{ map.uuid }}">
+
+    <div class="liste">
+
+        {{#each map.variantes as |variante| }}
+            {{#if variante.haveRight }}
+                <div class="card" >
+                    <span class="hidden"><input type="checkbox" name="variante[]" id="{{ variante.uuid }}" value="{{ variante.uuid }}" {{#if (eq @key 0)}}checked{{/if}}></span>
+                    <span class="image imgChanger">
+                        <label for="{{ variante.uuid }}">
+                            <img src="{{ variante.images.[0] }}">
+                        </label>
+                    </span>
+                    <span class="label">
+                        <label for="{{ variante.uuid }}">
+                            {{ variante.libelle }}
+                        </label>
+                    </span>
+                </div>
+            {{/if}}
+        {{/each}}
+
+    </div>
+    
+</div>

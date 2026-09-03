@@ -1,0 +1,52 @@
+<div class="fiche">
+    <div class="map retour" data-action="clearMap" ><img src="modules/import-studio-du-destin/assets/retour2.svg"></div>
+
+    <div class="listemap imgChangeParent" data-action2="" data-id="{{ map.mapId }}">
+        <nav>
+            <img class="imgChange" src="{{ map.variantes.[0].images.[0] }}">
+        </nav>
+        
+        <main>
+            <div>
+                <h1>{{ map.libelle }}</h1>
+                <p class="description">{{ map.description }}</p>
+                {{#if pack.lienPatreon}}
+                    <p class="link"><a href="{{ pack.lienPatreon }}" >{{ localize 'import-studio-du-destin.lienPatreon' }}</a></p>
+                {{/if}}
+                {{#if map.haveRight }}
+                    <p><button class="btn" data-action="clickDownload" data-id="{{ map.mapId }}">{{ localize 'import-studio-du-destin.downloadMap.button' }}</button></p>
+                {{else}}
+                    <p class="alerteLogin">{{#if me.isLogged }}{{ localize 'import-studio-du-destin.noNiveaux' }}{{else}}{{ localize 'import-studio-du-destin.notConnected' }}{{/if}}</p>
+                {{/if}}
+                <p class="tags">
+                    {{#each map.tags as |tag| }}
+                        <span class="tag">{{ tag.libelle }}</span>
+                    {{/each}}
+                </p>
+            </div>
+            <div class="mapContainer">
+                <h3>{{localize 'import-studio-du-destin.maps' }}</h3>
+                <div class="liste">
+
+
+                    {{#each map.variantes as |variante| }}
+                        {{#each variante.images as |image| }}
+                            <div class="card" >
+                                <span class="image imgChanger"><img src="{{ image }}"></span>
+                                <span class="label">{{ variante.libelle }}</span>
+                                {{#if (eq variante.haveRight false) }}
+                                    <span class="cadenas">
+                                        <svg width="20" height="20" viewBox="0 0 877 1280">
+                                            <use href="modules/import-studio-du-destin/assets/lock.svg#icon">
+                                        </svg>
+                                    </span>
+                                {{/if}}
+                            </div>
+                        {{/each}}
+                    {{/each}}
+
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

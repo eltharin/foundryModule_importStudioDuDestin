@@ -1,0 +1,16 @@
+<div class="window_content">
+    {{#if hasSidebar}}
+    <nav>
+        {{> 'modules/import-studio-du-destin/templates/search/sidebar.hbs'}}        
+    </nav>
+    {{/if}}
+    <main>
+        {{#if (eq mode 'detailMap')}}
+            {{> 'modules/import-studio-du-destin/templates/search/detailMap.hbs'}}
+        {{else if (eq mode 'listeMap')}}
+            {{> 'modules/import-studio-du-destin/templates/search/listeMap.hbs'}}
+        {{else }}
+            {{> 'modules/import-studio-du-destin/templates/search/listePack.hbs'}}
+        {{/if}}
+    </main>
+</div>

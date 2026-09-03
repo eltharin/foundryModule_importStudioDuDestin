@@ -1,0 +1,40 @@
+<div class="fiche">
+    <div class="map retour" data-action="clearPack" ><img src="modules/import-studio-du-destin/assets/retour2.svg"></div>
+
+    <div class="listemap imgChangeParent" data-action2="" data-id="{{ map.mapId }}">
+        <nav>
+            <img class="imgChange" src="{{ pack.images.[0] }}">
+        </nav>
+        
+        <main>
+            <div>
+                <h1>{{ pack.libelle }}</h1>
+                <p class="description">{{ pack.description }}</p>
+                {{#if pack.lienPatreon}}<p class="link"><a href="{{ pack.lienPatreon }}" >{{ localize 'import-studio-du-destin.lienPatreon' }}</a></p>{{/if}}
+                <p class="tags">
+                    {{#each pack.tags as |tag| }}
+                        <span class="tag">{{ tag.libelle }}</span>
+                    {{/each}}
+                </p>
+            </div>
+            <div class="mapContainer">
+                <h3>{{localize 'import-studio-du-destin.maps' }}</h3>
+                <div class="liste">
+                    {{#each pack.maps as |map| }}
+                        <div class="card" data-action="clickMap" data-id="{{map.uuid}}">
+                            <span class="image"><img src="{{ map.variantes.[0].images.[0] }}"></span>
+                            <span class="label">{{ map.libelle }}</span>       
+                            {{#if (eq map.haveRight false) }}
+                                <span class="cadenas">
+                                    <svg width="20" height="20" viewBox="0 0 877 1280">
+                                        <use href="modules/import-studio-du-destin/assets/lock.svg#icon">
+                                    </svg>
+                                </span>
+                            {{/if}}                 
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
