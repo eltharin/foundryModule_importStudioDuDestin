@@ -7,10 +7,10 @@ import { StudioDuDestinApi } from "./Api/StudioDuDestinApi.mjs";
 
 export class MapImporter
 {
-    static async importMap(me, mapUuid, variantes)
+    static async importMap(me, mapUuid, variantes, taillemap)
     {
         let data = await StudioDuDestinApi.getMapData(me, mapUuid, {"variantes": variantes })
-        
+        console.log(data);
         if(data.messages.length > 0)
         {
             data.messages.forEach(m => {
@@ -32,11 +32,11 @@ export class MapImporter
 
         if(data.total > 0)
         {
-            data.results.forEach(map => this.create_scene_from_map(map, me));
+            data.results.forEach(map => this.create_scene_from_map(map, me, taillemap));
         }
     }
 
-    static async create_scene_from_map(map, me)
+    static async create_scene_from_map(map, me, taillemap)
     {
         const sceneName = map.scene.name != '' ? map.scene.name : "Scene Import";
 
@@ -63,8 +63,9 @@ export class MapImporter
         
         await Promise.all(imagesPromises);
         
-        let sceneData = Dd2VttImporter.convertData(map.content, targetFolder + "/" + map.images[0].uuid + ".jpg", sceneName);
+        let sceneData = Dd2VttImporter.convertData(map.content, targetFolder + "/" + map.images[0].uuid + ".jpg", sceneName, taillemap);
         sceneData.flags = sceneFlags;
+        sceneData.grid = { distance: taillemap };
 
         const newScene = await Scene.create(sceneData);
 

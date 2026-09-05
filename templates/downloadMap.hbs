@@ -2,6 +2,11 @@
     {{ localize "import-studio-du-destin.downloadMap.title" }} 
     <input type="hidden" name="map" value="{{ map.uuid }}">
 
+    <div class="">
+        <label>{{localize 'glyphes.roll.glyphe.nb_des'}}</label>
+        <input type="number" name="taillemap" value="{{taillemap}}" />
+    </div>
+    
     <div class="liste">
 
         {{#each map.variantes as |variante| }}
