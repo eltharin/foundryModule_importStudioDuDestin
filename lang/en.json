@@ -13,7 +13,8 @@
          "maps": "Maps",
          "downloadMap": {
             "button": "Download",
-            "title": "Which variant to download?"
+            "title": "Which variant to download?",
+            "taillemap": "Grid scale"
          },
          "errorApi": {
             "NotRightToDownload" : "You do not have permission to download the map {varianteName}",

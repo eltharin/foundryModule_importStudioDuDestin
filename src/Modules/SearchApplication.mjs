@@ -177,13 +177,16 @@ export class SearchApplication extends foundry.applications.api.HandlebarsApplic
     static async _onClickDownload(event, target) {
         const dialogData = await foundry.applications.api.DialogV2.input({
             title: Consts.MODULE_ID + ".changeVariante",
-            content: await foundry.applications.handlebars.renderTemplate("modules/import-studio-du-destin/templates/downloadMap.hbs", { map: this.maps[this.selectedPack].maps.find(m => m.uuid === this.selectedMap) }),
+            content: await foundry.applications.handlebars.renderTemplate("modules/import-studio-du-destin/templates/downloadMap.hbs", { 
+                map: this.maps[this.selectedPack].maps.find(m => m.uuid === this.selectedMap),
+                taillemap: CONFIG.Scene.documentClass.schema.fields.grid.fields.distance.initial(),
+            }),
             classes: ['import-studio-du-destin-downloadvariantedialog']
         });
 
         if (dialogData == null) { return; }
 
-        MapImporter.importMap(this.me, dialogData.map, dialogData['variante[]']).catch(e => ui.notifications.error(e.message));
+        MapImporter.importMap(this.me, dialogData.map, dialogData['variante[]'], dialogData.taillemap).catch(e => ui.notifications.error(e.message));
     }
 
     static async _onClickChangeLang(event, target) {

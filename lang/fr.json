@@ -13,7 +13,8 @@
          "maps": "Cartes",
          "downloadMap": {
             "button": "Télécharger",
-            "title": "Quelle variante télécharger ?"
+            "title": "Quelle variante télécharger ?",
+            "taillemap": "Echelle de la grille"
          },
          "errorApi": {
             "NotRightToDownload" : "Vous n'avez pas le droit de télécharger la map {varianteName}",

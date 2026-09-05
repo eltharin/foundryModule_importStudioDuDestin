@@ -5,7 +5,7 @@
 export class Dd2VttImporter 
 {
 
-    static convertData(dd2vttData, imgPath, sceneName) 
+    static convertData(dd2vttData, imgPath, sceneName, taillemap) 
     {
         const ppg = dd2vttData.resolution.pixels_per_grid || 100;
         const width = Math.round(dd2vttData.resolution.map_size.x * ppg);
@@ -63,7 +63,7 @@ export class Dd2VttImporter
         {
             for (const light of dd2vttData.lights) 
             {
-                const range = light.range * ppg;
+                const range = light.range / 5 * taillemap * ppg;
                 lights.push({
                     x: Math.round(light.position.x * ppg),
                     y: Math.round(light.position.y * ppg),
