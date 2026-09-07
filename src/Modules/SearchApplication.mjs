@@ -143,9 +143,8 @@ export class SearchApplication extends foundry.applications.api.HandlebarsApplic
 
     static _onClickPack(event, target) {
         this.selectedPack = target.dataset.id;
-
-        if (this.selectedPack.isPack == false) {
-            this.selectedMap = 0;
+        if (this.maps[this.selectedPack].isPack == false) {
+            this.selectedMap = Object.values(this.maps[this.selectedPack].maps)[0].uuid;
         }
         this.render(true);
     }
@@ -162,7 +161,7 @@ export class SearchApplication extends foundry.applications.api.HandlebarsApplic
 
     static _onClearMap(event, target) {
         this.selectedMap = null;
-        if (this.selectedPack.isPack == false) {
+        if (this.maps[this.selectedPack].isPack == false) {
             this.selectedPack = null;
         }
         this.render(true);
