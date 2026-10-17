@@ -181,7 +181,14 @@ export class SearchApplication extends foundry.applications.api.HandlebarsApplic
                 map: this.maps[this.selectedPack].maps.find(m => m.uuid === this.selectedMap),
                 taillemap: CONFIG.Scene.documentClass.schema.fields.grid.fields.distance.initial(),
             }),
-            classes: ['import-studio-du-destin-downloadvariantedialog']
+            classes: ['import-studio-du-destin-downloadvariantedialog'],
+            position: {
+                width: 800,
+                height: 670
+            },
+            window: {
+                resizable: true,
+            },
         });
 
         if (dialogData == null) { return; }

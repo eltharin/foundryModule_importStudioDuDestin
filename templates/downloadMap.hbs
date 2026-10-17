@@ -2,11 +2,6 @@
     {{ localize "import-studio-du-destin.downloadMap.title" }} 
     <input type="hidden" name="map" value="{{ map.uuid }}">
 
-    <div class="">
-        <label>{{localize 'import-studio-du-destin.downloadMap.taillemap'}}</label>
-        <input type="number" name="taillemap" value="{{taillemap}}" />
-    </div>
-    
     <div class="liste">
 
         {{#each map.variantes as |variante| }}
@@ -28,5 +23,10 @@
         {{/each}}
 
     </div>
-    
+
+    <div class="">
+        <label>{{localize 'import-studio-du-destin.downloadMap.taillemap'}}</label>
+        <input type="number" name="taillemap" value="{{taillemap}}" />
+    </div>
+
 </div>

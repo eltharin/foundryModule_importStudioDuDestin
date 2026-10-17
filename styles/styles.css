@@ -436,3 +436,31 @@
     display:none;
     position:absolute;
 }
+
+
+.import-studio-du-destin-downloadvariantedialog {
+
+    .dialog-form {
+        height: 100%;
+        display: flex;
+    }
+
+    .dialog-content {
+        min-height: 0;
+        display:flex;
+        flex-direction:column;
+        flex: 1 1 auto;
+
+        > div {
+            display:flex;
+            flex-direction: column;
+            height:100%;
+        }
+
+        .liste {
+            overflow-y: auto;
+            flex-grow:1;
+            margin-bottom : 10px;
+        }
+    }
+}
